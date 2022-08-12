@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body>
+ <div class="login">
+    <marquee direction="right"  bgcolor="red" >
+	<h1 style="text-align:center">Seat is Comfertable to driver- Prediction</h1>
+    </marquee>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="Type of vahicle" placeholder="Type of vahicle(1,2,..6) " required="required" /><br>
+      <input type="text" name="driving time " placeholder="driving time (1,2)" required="required" /><br>
+      <input type="text" name="Driv. Dist(km)" placeholder="Driv. Dist(km)" required="required" /><br>
+        <input type="text" name="Diseases" placeholder="Diseases(0,1,.,4)" required="required" /><br>
+        <input type="text" name="pain" placeholder="pain(0,1,.,4)" required="required" /><br>
+        <input type="text" name="Spectacle(yes or No)" placeholder="Spectacle(0,1)" required="required" /><br>
+        <input type="text" name="Operations" placeholder="Operations(0,1,.,4)" required="required" /><br>
+        <input type="text" name="Bad Habbites" placeholder="Bad Habbites(0,1,.,4)" required="required" /><br>
+        <input type="text" name="Ht of S(down)" placeholder="Ht of S(down)" required="required" /><br>
+        <input type="text" name="Breadth of S" placeholder="Breadth of S" required="required" /><br>
+        <input type="text" name="Lgt of S( horz.)" placeholder="Lgt of S( horz.)" required="required" /><br>
+        <input type="text" name="Ht of S(top)" placeholder="Ht of S(top)" required="required" /><br>
+        <input type="text" name="S&Stering (dist.)" placeholder="S&Stering (dist.)" required="required" /><br>
+        <input type="text" name="S&Gear(dist.)" placeholder="S&Gear(dist.)" required="required" /><br>
+        <input type="text" name="S&Clutch(dist)" placeholder="S&Clutch(dist)" required="required" /><br>
+        <input type="text" name="S&Brake(dist)" placeholder="S&Brake(dist)" required="required" /><br>
+
+
+        
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+
+
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
